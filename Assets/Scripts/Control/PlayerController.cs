@@ -44,15 +44,19 @@ namespace Control
             if (direction.magnitude == 0f) m_Animator.SetBool("IsIdle", true);
             if (direction.magnitude > 0f) m_Animator.SetBool("IsWalking", true);
             if (direction.z < 0f) m_Animator.SetBool("IsBackwards", true);
+            if (direction.x > 0f) m_Animator.SetBool("IsRightStrafing", true);
+            if (direction.x < 0f) m_Animator.SetBool("IsLeftStrafing", true);
         }
 
         private void ResetAllBools()
         {
             m_Animator.SetBool("IsIdle", false);
-            m_Animator.SetBool("IsArmed", false);
+            m_Animator.SetBool("IsArmed", true);
             m_Animator.SetBool("IsWalking", false);
             m_Animator.SetBool("IsRunning", false);
             m_Animator.SetBool("IsBackwards", false);
+            m_Animator.SetBool("IsRightStrafing", false);
+            m_Animator.SetBool("IsLeftStrafing", false);
         }
     }
 }
