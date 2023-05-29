@@ -10,15 +10,18 @@ namespace Game.Objectives
         {
             Target.Collected += _onCollected;
         }
-        
+
+        public override bool IsComplete => _isComplete;
+        private bool _isComplete;
+
         public override string GenerateText()
         {
-            return IsComplete ? $"{Target.name} collected".Green() : $"Collect {Target.name}".Red();
+            return IsComplete ? $"{Target.DisplayName} collected".Green() : $"Collect {Target.DisplayName}".Red();
         }
 
         private void _onCollected()
         {
-            IsComplete = true;
+            _isComplete = true;
             RaiseStateUpdated();
         }
     }

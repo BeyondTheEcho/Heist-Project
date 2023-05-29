@@ -6,7 +6,7 @@ namespace Game.Objectives
     public abstract class ObjectiveBase : MonoBehaviour
     {
         public event Action StateUpdated = () => { };
-        public bool IsComplete { get; protected set; }
+        public abstract bool IsComplete { get; }
 
         public abstract string GenerateText();
         

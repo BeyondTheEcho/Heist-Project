@@ -6,6 +6,7 @@ namespace Game
 {
     public class CollectableObject : MonoBehaviour
     {
+        public string DisplayName;
         public event Action Collected = () => { };
         
         private bool _isOverlap;
@@ -33,7 +34,7 @@ namespace Game
         {
             if (!other.CompareTag("Player")) return;
             _isOverlap = true;
-            CollectableHint.Show(name);
+            CollectableHint.Show(DisplayName);
         }
 
         void OnTriggerExit(Collider other)
