@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float m_Speed = 5f;
     [SerializeField] private float m_BulletLifetime = 15f;
 
+    private Vector3? m_TargetPos = null;
+
     private float m_TimeSinceSpawned = 0f;
 
     private void Update()
@@ -20,13 +22,18 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (m_TargetPos != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, m_TargetPos.Value, m_Speed * Time.deltaTime);
+        }
     }
 
     public void SetTarget(Transform player)
     {
-        transform.LookAt(player.transform);
-
-        GetComponent<Rigidbody>().AddForce(Vector3.forward * m_Speed);
+        transform.LookAt(player);
+        
+        m_TargetPos = player.position;
     }
 
     private void OnTriggerEnter(Collider collider)

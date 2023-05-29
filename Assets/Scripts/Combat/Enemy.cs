@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject m_FiringPos;
     [SerializeField] private Bullet m_BulletPrefab;
     [SerializeField] private float m_AttackRange = 50f;
-    [SerializeField] private float m_FiringDelay = 3f;
+    [SerializeField] private float m_FiringDelay = 0.01f;
 
     private GameObject m_Player;
     private float m_TimeSinceFired = 0f;
