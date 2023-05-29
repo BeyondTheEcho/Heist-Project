@@ -24,6 +24,7 @@ namespace Game
             if (_timeHeld >= 1f)
             {
                 Collected();
+                CollectableHint.Hide();
                 Destroy(gameObject);
             }
         }
@@ -32,13 +33,14 @@ namespace Game
         {
             if (!other.CompareTag("Player")) return;
             _isOverlap = true;
+            CollectableHint.Show(name);
         }
 
         void OnTriggerExit(Collider other)
         {
             if (!other.CompareTag("Player")) return;
             _isOverlap = false;
-            _timeHeld = 0f;
+            CollectableHint.Hide();
         }
 
         void OnValidate()
