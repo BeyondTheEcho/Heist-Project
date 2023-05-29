@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
     private GameObject m_Player;
     private float m_TimeSinceFired = 0f;
+    private bool m_HasLineOfSight = false;
 
     private void Awake()
     {
@@ -34,11 +35,29 @@ public class Enemy : MonoBehaviour
         transform.LookAt(m_Player.transform);
 
         if (m_TimeSinceFired < m_FiringDelay) return;
+        if (!m_HasLineOfSight) return;
         
         Bullet bullet = Instantiate(m_BulletPrefab, m_FiringPos.transform.position, transform.rotation);
 
         bullet.SetTarget(m_Player.GetComponent<PlayerController>().GetTargetTransform());
 
         m_TimeSinceFired = 0f;
+    }
+
+    void LateUpdate()
+    {
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(m_FiringPos.transform.position, m_Player.transform.position - transform.position, out RaycastHit hit, Mathf.Infinity, ~0))
+        {
+            if (hit.collider.gameObject.tag == "Player")
+            {
+                Debug.Log("Has LOS");
+                m_HasLineOfSight = true;
+            }
+        }
+        else
+        {
+            m_HasLineOfSight = false;
+        }
     }
 }
