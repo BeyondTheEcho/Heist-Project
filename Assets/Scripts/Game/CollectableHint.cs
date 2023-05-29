@@ -14,7 +14,7 @@ namespace Game
             Assert.IsNotNull(obj, $"Failed to find a {nameof(CollectableHint)}!");
 
             obj.Text.enabled = true;
-            obj.Text.text = $"Hold space to collect \"{name}\"...";
+            obj.Text.text = $"Hold F to collect \"{name}\"...";
         }
 
         public static void Hide()

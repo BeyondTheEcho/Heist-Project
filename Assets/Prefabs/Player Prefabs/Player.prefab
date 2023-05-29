@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 5890576158625617314}
   - component: {fileID: 3520116451520860614}
   - component: {fileID: 3520116451520860618}
+  - component: {fileID: 2065554455}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -619,13 +620,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.8
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.87, z: 0}
+  m_Center: {x: 0, y: 0.783, z: 0}
 --- !u!114 &3520116451520860614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,10 +651,26 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.3
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.783, z: 0}
+--- !u!54 &2065554455
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688771553698936492}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &2089520222714125361
 GameObject:
   m_ObjectHideFlags: 0

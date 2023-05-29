@@ -14,7 +14,7 @@ namespace Game
         
         void Update()
         {
-            if (!_isOverlap || !Input.GetKey(KeyCode.Space))
+            if (!_isOverlap || !Input.GetKey(KeyCode.F))
             {
                 _timeHeld = 0f;
                 return;
