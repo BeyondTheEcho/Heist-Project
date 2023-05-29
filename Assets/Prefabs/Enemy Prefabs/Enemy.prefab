@@ -3795,6 +3795,7 @@ GameObject:
   - component: {fileID: 1522851080896079679}
   - component: {fileID: 1522851080896079681}
   - component: {fileID: 1522851080896079683}
+  - component: {fileID: 1376133286597310985}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -3891,6 +3892,19 @@ MonoBehaviour:
   m_BulletPrefab: {fileID: 2939411723183767711, guid: 450a2d60d6ff262428f8d8400ed2e31d, type: 3}
   m_AttackRange: 50
   m_FiringDelay: 3
+--- !u!114 &1376133286597310985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941038587690720865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f690178db896f349a9c92e9185dc29d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Health: 25
 --- !u!1001 &7143070585492504219
 PrefabInstance:
   m_ObjectHideFlags: 0
