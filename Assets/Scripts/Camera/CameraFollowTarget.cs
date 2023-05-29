@@ -11,10 +11,8 @@ public class CameraFollowTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var rot = transform.rotation.eulerAngles;
+        float xVal = Input.GetAxisRaw("Mouse Y");
 
-        float xVal = rot.x + Input.GetAxisRaw("Mouse Y");
-
-        transform.rotation = Quaternion.Euler(Mathf.Clamp(xVal, m_xMin, m_xMax), 0 ,0);
+        transform.Rotate(Vector3.left, xVal);
     }
 }
