@@ -4795,11 +4795,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1688771553698936492, guid: ba3a4d282de5bbd468dbc99c6f3d2456, type: 3}
   m_PrefabInstance: {fileID: 3520116451520860612}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &154311048 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5844427413754671400, guid: ba3a4d282de5bbd468dbc99c6f3d2456, type: 3}
-  m_PrefabInstance: {fileID: 3520116451520860612}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &154311053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33305,6 +33300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46275a2ed4d9974ca482a0496f978eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayName: 
   SubObjectives:
   - {fileID: 1268949478}
   - {fileID: 1268949479}
@@ -52804,37 +52800,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 410688, guid: 049ce445b2930664c8e9e379a2f09d27, type: 3}
   m_PrefabInstance: {fileID: 1866349846}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1867878641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1867878642}
-  m_Layer: 0
-  m_Name: Chest Pos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1867878642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867878641}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 154311048}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1872850322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60333,7 +60298,7 @@ PrefabInstance:
     - target: {fileID: 3520116451520860614, guid: ba3a4d282de5bbd468dbc99c6f3d2456, type: 3}
       propertyPath: m_PlayerChestTransform
       value: 
-      objectReference: {fileID: 1867878642}
+      objectReference: {fileID: 0}
     - target: {fileID: 3520116451520860618, guid: ba3a4d282de5bbd468dbc99c6f3d2456, type: 3}
       propertyPath: m_IsTrigger
       value: 1
