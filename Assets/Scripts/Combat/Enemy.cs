@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Control;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -33,10 +34,10 @@ public class Enemy : MonoBehaviour
         transform.LookAt(m_Player.transform);
 
         if (m_TimeSinceFired < m_FiringDelay) return;
+        
+        Bullet bullet = Instantiate(m_BulletPrefab, m_FiringPos.transform.position, transform.rotation);
 
-        Bullet bullet = Instantiate(m_BulletPrefab, m_FiringPos.transform.position, Quaternion.identity);
-
-        bullet.SetTarget(m_Player.transform);
+        bullet.SetTarget(m_Player.GetComponent<PlayerController>().GetTargetTransform());
 
         m_TimeSinceFired = 0f;
     }

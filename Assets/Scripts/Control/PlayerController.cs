@@ -8,6 +8,7 @@ namespace Control
     {
         [SerializeField] [Range(0, 5)] private float m_MoveSpeed = 3.5f;
         [SerializeField] [Range(0, 5)] private float m_TurnSpeed = 1.5f;
+        [SerializeField] private Transform m_PlayerChestTransform;
 
         private CharacterController m_Controller;
         private Animator m_Animator;
@@ -70,6 +71,11 @@ namespace Control
             m_Animator.SetBool(IsBackwards, false);
             m_Animator.SetBool(IsRightStrafing, false);
             m_Animator.SetBool(IsLeftStrafing, false);
+        }
+
+        public Transform GetTargetTransform()
+        {
+            return m_PlayerChestTransform;
         }
     }
 }

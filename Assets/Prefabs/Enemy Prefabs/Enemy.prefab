@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820914802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.027, y: 1.25, z: 0.271}
+  m_LocalPosition: {x: 0.027, y: 1.25, z: 0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3888,7 +3888,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FiringPos: {fileID: 1820914802}
-  m_BulletPrefab: {fileID: 116712, guid: 05f834a503ef3ec438d11bfe95dba628, type: 3}
+  m_BulletPrefab: {fileID: 2939411723183767711, guid: 450a2d60d6ff262428f8d8400ed2e31d, type: 3}
+  m_AttackRange: 50
+  m_FiringDelay: 3
 --- !u!1001 &7143070585492504219
 PrefabInstance:
   m_ObjectHideFlags: 0
