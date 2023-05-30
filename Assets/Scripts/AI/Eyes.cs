@@ -7,13 +7,19 @@ namespace AI
 {
     public class Eyes : MonoBehaviour, ISensor
     {
+        [Header("Eye / View Settings")]
         [SerializeField] private float m_ViewArcInDegrees = 45f;
         [SerializeField] private float m_ViewDistance = 25f;
         [SerializeField] private Transform m_EyesTransform;
-        [SerializeField] private bool m_DrawDebugRays = false;
 
+        [Header("Debug Settings")]
+        [SerializeField] private bool m_DrawDebugRays = false;
+        [SerializeField] private bool m_EnableLogging = false;
+
+        //Private vars
         private GameObject m_Player;
 
+        //consts
         private const int c_AllLayers = ~0;
 
         private void Awake()
@@ -70,16 +76,23 @@ namespace AI
                     //If the hit object was in fact the player, meaning the view is unobstructed (clear line of sight)
                     if (hit.collider.CompareTag("Player"))
                     {
-                        Debug.Log($"{gameObject.name}: Has LOS");
+                        if (m_EnableLogging)
+                        {
+                            Debug.Log($"{gameObject.name}: Has line of sight");
+                        }
 
-                        //Populated the passed in ref type
+                        //Populated the passed in ref type and returns early
                         data.m_HasLineOfSightToPlayer = true;
                         return;
                     }
                 }
             }
 
-            Debug.Log($"{gameObject.name}: Does NOT have LOS");
+            if (m_EnableLogging)
+            {
+                Debug.Log($"{gameObject.name}: Does NOT have line of sight");
+            }
+
             //populates the passed in ref type if the above fails
             data.m_HasLineOfSightToPlayer = false;
         }

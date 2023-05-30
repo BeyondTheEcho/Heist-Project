@@ -530,8 +530,9 @@ GameObject:
   - component: {fileID: 6169455982749967988}
   - component: {fileID: 6169455982749967883}
   - component: {fileID: 6169455982749967989}
-  - component: {fileID: 8166191614349570636}
   - component: {fileID: 8166191614349570635}
+  - component: {fileID: 8166191614349570636}
+  - component: {fileID: 119065751098178677}
   m_Layer: 0
   m_Name: NPI_Enemy
   m_TagString: Untagged
@@ -612,20 +613,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &8166191614349570636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3352987095191822165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8c20d66272c9b41988f8a37ada17ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ViewDistance: 30
-  m_EyesTransform: {fileID: 0}
 --- !u!114 &8166191614349570635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +626,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorUpdateRateInSeconds: 1
+--- !u!114 &8166191614349570636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352987095191822165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8c20d66272c9b41988f8a37ada17ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ViewArcInDegrees: 45
+  m_ViewDistance: 30
+  m_EyesTransform: {fileID: 7460516472840813601}
+  m_DrawDebugRays: 1
+  m_EnableLogging: 1
+--- !u!114 &119065751098178677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352987095191822165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4407d59fc73d7724cacf79cb1b049298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PhysicalDetectionRadius: 2.5
+  m_EnableLogging: 1
+  m_DrawDetectionSphere: 1
+  m_DebugSphereColor:
+    m_Red: 33
+    m_Green: 107
+    m_Blue: 255
+    m_Alpha: 0.25
 --- !u!1 &4664620331834668358
 GameObject:
   m_ObjectHideFlags: 0
