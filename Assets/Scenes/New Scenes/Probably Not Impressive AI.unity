@@ -9176,6 +9176,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8166191614349570636, guid: 05c313cdf2a0d7c49b0a3232f9be04e8, type: 3}
+      propertyPath: m_DrawDebugRays
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8166191614349570636, guid: 05c313cdf2a0d7c49b0a3232f9be04e8, type: 3}
       propertyPath: m_EyesTransform
       value: 
       objectReference: {fileID: 4059154805545013566}
