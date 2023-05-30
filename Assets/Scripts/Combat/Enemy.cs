@@ -46,7 +46,6 @@ public class Enemy : MonoBehaviour
 
     void LateUpdate()
     {
-        // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(m_FiringPos.transform.position, m_Player.transform.position - transform.position, out RaycastHit hit, Mathf.Infinity, ~0))
         {
             if (hit.collider.gameObject.tag == "Player")

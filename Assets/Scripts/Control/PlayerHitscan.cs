@@ -7,10 +7,10 @@ public class PlayerHitscan : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Shoot();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Shoot();
+        //}
     }
     
     public void Shoot()
