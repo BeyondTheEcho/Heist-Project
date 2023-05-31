@@ -27,7 +27,7 @@ namespace AI
         /// <summary>
         /// Draws a gizmo sphere representing the physical detection radius if enabled in inspector
         /// </summary>
-        void OnDrawGizmosSelected()
+        void OnDrawGizmos()
         {
             if (!m_DrawDetectionSphere) return;
 

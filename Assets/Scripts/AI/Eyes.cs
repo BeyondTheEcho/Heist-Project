@@ -28,12 +28,11 @@ namespace AI
             m_Player = GameObject.FindGameObjectWithTag("Player");
         }
 
-        private void Update()
+        private void OnDrawGizmos()
         {
             //Draws debug rays represent the npc's field of view if the bool is checked in the inspector
             if (m_DrawDebugRays) DrawDebugRays();
         }
-
 
         /// <summary>
         /// Draws Debug Rays. Blue for transform.forward and red to indicate the arc of the set ViewArc

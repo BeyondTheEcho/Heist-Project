@@ -12,6 +12,7 @@ namespace AI
         private ISensor[] m_Sensors;
         private WaitForSeconds m_WaitForSeconds;
         private SensorData m_SensorData = new SensorData();
+        private GuardState m_GuardState = GuardState.Patrol;
 
         void Awake()
         {
@@ -23,6 +24,24 @@ namespace AI
         {
             StartCoroutine(GetSensorData());
         }
+
+
+        void Update()
+        {
+            if (m_GuardState == GuardState.Patrol)
+            {
+                //do patrol stuff
+            }
+            else if (m_GuardState == GuardState.Guard)
+            {
+                //do guard stuff
+            }
+            else if (m_GuardState == GuardState.Attack)
+            {
+                //do attack stuff
+            }
+        }
+
 
         private IEnumerator GetSensorData()
         {
@@ -36,5 +55,12 @@ namespace AI
                 yield return m_WaitForSeconds;
             }
         }
+    }
+
+    public enum GuardState
+    {
+        Patrol,
+        Guard,
+        Attack,
     }
 }
