@@ -12,14 +12,22 @@ namespace AI
     {
         public override void OnInspectorGUI()
         {
+            // Display the script name at the top
+            EditorGUILayout.Space();
+            EditorGUILayout.ObjectField("Script", MonoScript.FromMonoBehaviour((PatrolRoute)target), typeof(PatrolRoute), false);
+
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+
             // Update the serialized object to reflect any changes made in the Inspector.
             serializedObject.Update();
 
             // Get a reference to the target object of the Inspector, which is an instance of the 
             PatrolRoute patrolRoute = (PatrolRoute)target;
 
+
             // Display the property field for the "m_PatrolPointNames" serialized field
             EditorGUILayout.PropertyField(serializedObject.FindProperty("m_PatrolPointNames"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("m_PatrolPointLingerTime"));
 
             EditorGUILayout.Space();
 
@@ -55,6 +63,8 @@ namespace AI
 
             EditorGUILayout.Space();
 
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+
             // Display the property fields for the debug settings
             EditorGUILayout.PropertyField(serializedObject.FindProperty("m_PatrolPointIndicatorSize"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("m_EnableIndicators"));
@@ -69,6 +79,7 @@ namespace AI
     {
         [Header("Patrol Route Settings")]
         [SerializeField] private string m_PatrolPointNames = "Patrol Point";
+        [SerializeField] private float m_PatrolPointLingerTime = 15f;
 
         [Header("Debug Settings")]
         [SerializeField][Range(0.1f, 1f)] private float m_PatrolPointIndicatorSize = 0.25f;
@@ -82,6 +93,15 @@ namespace AI
         {
             // Ensure that the number of children is always non-negative
             m_PatrolPoints = Mathf.Max(m_PatrolPoints, 0);
+        }
+
+        /// <summary>
+        /// Gets the time to linger at east patrol point.
+        /// </summary>
+        /// <returns>The time to linger at each patrol point</returns>
+        public float GetLingerTime()
+        {
+            return m_PatrolPointLingerTime;
         }
 
         /// <summary>
@@ -195,8 +215,8 @@ namespace AI
             for (int i = 0; i < transform.childCount; i++)
             {
                 int j = GetNextIndex(i);
-                Gizmos.DrawSphere(GetWaypoint(i), m_PatrolPointIndicatorSize);
-                Gizmos.DrawLine(GetWaypoint(i), GetWaypoint(j));
+                Gizmos.DrawSphere(GetPatrolPoint(i), m_PatrolPointIndicatorSize);
+                Gizmos.DrawLine(GetPatrolPoint(i), GetPatrolPoint(j));
             }
         }
 
@@ -220,7 +240,7 @@ namespace AI
         /// </summary>
         /// <param name="i">The index of the patrol point.</param>
         /// <returns>The position of the patrol point.</returns>
-        public Vector3 GetWaypoint(int i)
+        public Vector3 GetPatrolPoint(int i)
         {
             return transform.GetChild(i).position;
         }
