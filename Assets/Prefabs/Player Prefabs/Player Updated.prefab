@@ -349,7 +349,7 @@ Animator:
   m_GameObject: {fileID: 594847208394228523}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 16c4b6c36252ce14e8083291c9e774fd, type: 3}
-  m_Controller: {fileID: 9100000, guid: 33e2c937770d3d84789eca9696f35c60, type: 2}
+  m_Controller: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -393,6 +393,7 @@ MonoBehaviour:
   SprintSpeed: 5.335
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
+  m_Sensitivity: 1
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
   FootstepAudioClips:
   - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
@@ -454,6 +455,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  m_Aim: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -568,6 +570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AimCamera: {fileID: 0}
+  m_Sensitivity: 1
+  m_AimSensitivity: 0.5
 --- !u!1 &724489956179796281
 GameObject:
   m_ObjectHideFlags: 0
