@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using StarterAssets;
+using UnityEngine.Animations.Rigging;
 
 public class TPSController : MonoBehaviour
 {
+    [SerializeField] private Rig m_Rig;
     [SerializeField] private CinemachineVirtualCamera m_AimCamera;
     [SerializeField] private float m_Sensitivity = 1f;
     [SerializeField] private float m_AimSensitivity = 0.5f;
@@ -39,6 +41,7 @@ public class TPSController : MonoBehaviour
 
         if (m_StarterAssetsInputs.m_Aim)
         {
+            m_Rig.weight = 1f;
             m_AimCamera.gameObject.SetActive(true);
             m_ThirdPersonController.SetSensitivity(m_AimSensitivity);
             m_ThirdPersonController.SetRotateOnMove(false);
@@ -52,6 +55,7 @@ public class TPSController : MonoBehaviour
         }
         else
         {
+            m_Rig.weight = 0f;
             m_AimCamera.gameObject.SetActive(false);
             m_ThirdPersonController.SetSensitivity(m_Sensitivity);
             m_ThirdPersonController.SetRotateOnMove(true);
