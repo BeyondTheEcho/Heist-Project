@@ -11,6 +11,8 @@ public class TPSController : MonoBehaviour
     [SerializeField] private float m_AimSensitivity = 0.5f;
     [SerializeField] private LayerMask m_AimLayerMask;
     [SerializeField] private Transform m_AimTarget;
+    [SerializeField] private GameObject m_Bullet;
+    [SerializeField] private Transform m_BulletSpawnPosition;
 
     private ThirdPersonController m_ThirdPersonController;
     private StarterAssetsInputs m_StarterAssetsInputs;
@@ -53,6 +55,13 @@ public class TPSController : MonoBehaviour
             m_AimCamera.gameObject.SetActive(false);
             m_ThirdPersonController.SetSensitivity(m_Sensitivity);
             m_ThirdPersonController.SetRotateOnMove(true);
+        }
+
+        if (m_StarterAssetsInputs.m_Shoot)
+        {
+            Vector3 aimDirection = (aimPosition - m_BulletSpawnPosition.transform.position).normalized;
+            Instantiate(m_Bullet, m_BulletSpawnPosition.transform.position, Quaternion.LookRotation(aimDirection));
+            m_StarterAssetsInputs.m_Shoot = false;
         }
     }
 }

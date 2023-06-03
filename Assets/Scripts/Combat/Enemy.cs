@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         
         Bullet bullet = Instantiate(m_BulletPrefab, m_FiringPos.transform.position, transform.rotation);
 
-        bullet.SetTarget(m_Player.GetComponent<PlayerController>().GetTargetTransform());
+        //bullet.SetTarget(m_Player.GetComponent<PlayerController>().GetTargetTransform());
 
         m_TimeSinceFired = 0f;
     }
