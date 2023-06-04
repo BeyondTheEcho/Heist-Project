@@ -356,7 +356,8 @@ GameObject:
   - component: {fileID: 92268469}
   - component: {fileID: 92268468}
   - component: {fileID: 92268467}
-  m_Layer: 2
+  - component: {fileID: 92268471}
+  m_Layer: 8
   m_Name: Aim Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,8 +397,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 2100000, guid: f1b0fea076fb0574d868f6e3d9523f52, type: 2}
+  - {fileID: 2100000, guid: 14d7e2f7d492b39429f9199ed843ae37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -442,6 +442,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &92268471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92268466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: fe2a8a7a536f4234ab02df4d736dffc5, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!4 &98925968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7969030848065531789, guid: e6ddc79307f41a24482a965e192b382a, type: 3}
