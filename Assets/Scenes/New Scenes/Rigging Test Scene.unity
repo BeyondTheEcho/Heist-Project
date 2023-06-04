@@ -7843,5 +7843,26 @@ PrefabInstance:
       propertyPath: m_AimTarget
       value: 
       objectReference: {fileID: 92268470}
+    - target: {fileID: 4920039145982676634, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_MuzzleFlashPrefab
+      value: 
+      objectReference: {fileID: 7362546928518452813}
+    - target: {fileID: 5278819481269842424, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278819481269842424, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ca3958ffa147214baa6eebd8f55e7fd, type: 2}
+    - target: {fileID: 5278819481272022540, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+--- !u!1 &7362546928518452813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5278819481272022540, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+  m_PrefabInstance: {fileID: 7362546928518452812}
+  m_PrefabAsset: {fileID: 0}
