@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5961785443320445126}
   - component: {fileID: 4897772476182712083}
   - component: {fileID: 5087870881990866038}
-  m_Layer: 0
+  - component: {fileID: 3674421623700669733}
+  m_Layer: 8
   m_Name: RaycastBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984818895806779771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.55089, y: 4.1470566, z: 10.2540455}
+  m_LocalPosition: {x: -8.49, y: 4.1470566, z: 10.2540455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54,7 +55,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 769159cfdcf511347812db4fe719b5ff, type: 2}
+  - {fileID: 2100000, guid: 9ca3958ffa147214baa6eebd8f55e7fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -153,4 +154,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d05ff493371cf45856f1fd89289c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HitEffectPrefab: {fileID: 194062, guid: 4dbc0fb3c54c93449a3baaf737a54338, type: 3}
   m_Speed: 200
+--- !u!114 &3674421623700669733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984818895806779771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: fe2a8a7a536f4234ab02df4d736dffc5, type: 2}
+  isGlobal: 1
+  blendDistance: 10000
+  weight: 1
+  priority: 0

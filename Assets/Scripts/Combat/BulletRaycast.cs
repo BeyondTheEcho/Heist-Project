@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletRaycast : MonoBehaviour
 {
+    [SerializeField] private GameObject m_HitEffectPrefab;
     [SerializeField] private float m_Speed = 200f;
 
     private Vector3 m_TargetPosition;
@@ -21,6 +22,7 @@ public class BulletRaycast : MonoBehaviour
 
         if (distanceBeforeMove < distanceAfterMove)
         {
+            Instantiate(m_HitEffectPrefab, transform.position, Quaternion.LookRotation(moveDirection, Vector3.up));
             Destroy(gameObject);
         }
     }

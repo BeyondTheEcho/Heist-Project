@@ -7,6 +7,8 @@ using UnityEngine.Animations.Rigging;
 
 public class TPSController : MonoBehaviour
 {
+    [SerializeField] private AudioClip m_RifleAudioClip;
+    [SerializeField] private AudioSource m_RifleAudioSource;
     [SerializeField] private Rig m_AimRig;
     [SerializeField] private Rig m_IdleRig;
     [SerializeField] private CinemachineVirtualCamera m_AimCamera;
@@ -70,6 +72,7 @@ public class TPSController : MonoBehaviour
 
                 Vector3 BulletAimDirection = (aimPosition - m_BulletSpawnPosition.transform.position).normalized;
 
+                m_RifleAudioSource.PlayOneShot(m_RifleAudioClip);
                 BulletRaycast bullet = Instantiate(m_Bullet, m_BulletSpawnPosition.transform.position, Quaternion.LookRotation(BulletAimDirection));
                 bullet.SetupBullet(hit.point);
 
