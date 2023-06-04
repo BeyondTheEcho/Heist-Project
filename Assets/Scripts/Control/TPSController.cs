@@ -7,7 +7,8 @@ using UnityEngine.Animations.Rigging;
 
 public class TPSController : MonoBehaviour
 {
-    [SerializeField] private Rig m_Rig;
+    [SerializeField] private Rig m_AimRig;
+    [SerializeField] private Rig m_IdleRig;
     [SerializeField] private CinemachineVirtualCamera m_AimCamera;
     [SerializeField] private float m_Sensitivity = 1f;
     [SerializeField] private float m_AimSensitivity = 0.5f;
@@ -16,11 +17,13 @@ public class TPSController : MonoBehaviour
     [SerializeField] private GameObject m_Bullet;
     [SerializeField] private Transform m_BulletSpawnPosition;
 
+    private Animator m_Animator;
     private ThirdPersonController m_ThirdPersonController;
     private StarterAssetsInputs m_StarterAssetsInputs;
 
     private void Awake()
     {
+        m_Animator = GetComponent<Animator>();
         m_ThirdPersonController = GetComponent<ThirdPersonController>();
         m_StarterAssetsInputs = GetComponent<StarterAssetsInputs>();
     }
@@ -41,7 +44,9 @@ public class TPSController : MonoBehaviour
 
         if (m_StarterAssetsInputs.m_Aim)
         {
-            m_Rig.weight = 1f;
+            m_Animator.SetBool("IsAiming", true);
+            m_AimRig.weight = 1f;
+            m_IdleRig.weight = 0f;
             m_AimCamera.gameObject.SetActive(true);
             m_ThirdPersonController.SetSensitivity(m_AimSensitivity);
             m_ThirdPersonController.SetRotateOnMove(false);
@@ -55,7 +60,9 @@ public class TPSController : MonoBehaviour
         }
         else
         {
-            m_Rig.weight = 0f;
+            m_Animator.SetBool("IsAiming", false);
+            m_AimRig.weight = 0f;
+            m_IdleRig.weight = 1f;
             m_AimCamera.gameObject.SetActive(false);
             m_ThirdPersonController.SetSensitivity(m_Sensitivity);
             m_ThirdPersonController.SetRotateOnMove(true);
