@@ -14,9 +14,11 @@ public class TPSController : MonoBehaviour
     [SerializeField] private float m_AimSensitivity = 0.5f;
     [SerializeField] private LayerMask m_AimLayerMask;
     [SerializeField] private Transform m_AimTarget;
-    [SerializeField] private GameObject m_Bullet;
+    [SerializeField] private BulletRaycast m_Bullet;
     [SerializeField] private Transform m_BulletSpawnPosition;
+    [SerializeField] private float m_TimeBetweenShots = 0.01f;
 
+    private float m_TimeSinceLastShot = Mathf.Infinity;
     private Animator m_Animator;
     private ThirdPersonController m_ThirdPersonController;
     private StarterAssetsInputs m_StarterAssetsInputs;
@@ -30,6 +32,10 @@ public class TPSController : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(m_StarterAssetsInputs.m_Shoot);
+
+        m_TimeSinceLastShot += Time.deltaTime;
+
         Vector3 aimPosition = Vector3.zero;
 
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2, Screen.height / 2);
@@ -57,6 +63,18 @@ public class TPSController : MonoBehaviour
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+
+            if (m_StarterAssetsInputs.m_Shoot)
+            {
+                if (m_TimeSinceLastShot < m_TimeBetweenShots) return;
+
+                Vector3 BulletAimDirection = (aimPosition - m_BulletSpawnPosition.transform.position).normalized;
+
+                BulletRaycast bullet = Instantiate(m_Bullet, m_BulletSpawnPosition.transform.position, Quaternion.LookRotation(BulletAimDirection));
+                bullet.SetupBullet(hit.point);
+
+                m_TimeSinceLastShot = 0f;
+            }
         }
         else
         {
@@ -66,13 +84,6 @@ public class TPSController : MonoBehaviour
             m_AimCamera.gameObject.SetActive(false);
             m_ThirdPersonController.SetSensitivity(m_Sensitivity);
             m_ThirdPersonController.SetRotateOnMove(true);
-        }
-
-        if (m_StarterAssetsInputs.m_Shoot)
-        {
-            Vector3 aimDirection = (aimPosition - m_BulletSpawnPosition.transform.position).normalized;
-            Instantiate(m_Bullet, m_BulletSpawnPosition.transform.position, Quaternion.LookRotation(aimDirection));
-            m_StarterAssetsInputs.m_Shoot = false;
         }
     }
 }

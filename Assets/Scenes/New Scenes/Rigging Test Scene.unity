@@ -7707,10 +7707,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 594847208394228519, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594847208394228519, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 594847208394228519, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 443edb96-1b82-44a2-a339-08b0a874f2eb
+      objectReference: {fileID: 0}
+    - target: {fileID: 594847208394228519, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: ec8f5de7-e84b-4bfb-a4ac-bdc3159e89b8
+      objectReference: {fileID: 0}
+    - target: {fileID: 594847208394228519, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: Player/Aim[/Mouse/rightButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 594847208394228519, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: Player/Shoot[/Mouse/leftButton]
+      objectReference: {fileID: 0}
     - target: {fileID: 594847208394228523, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
       propertyPath: m_Name
       value: Player Updated
       objectReference: {fileID: 0}
+    - target: {fileID: 4920039145982676634, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_Bullet
+      value: 
+      objectReference: {fileID: 5087870881990866038, guid: 3c18ca8a1ff829445b923d2a9950f6bf, type: 3}
     - target: {fileID: 4920039145982676634, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
       propertyPath: m_AimCamera
       value: 
@@ -7719,5 +7747,9 @@ PrefabInstance:
       propertyPath: m_AimTarget
       value: 
       objectReference: {fileID: 92268470}
+    - target: {fileID: 4920039145982676634, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
+      propertyPath: m_TimeBetweenShots
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cfefc947990e2c4ba232042dd95da7f, type: 3}
