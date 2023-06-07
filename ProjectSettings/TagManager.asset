@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Cover
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - Floor
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player Bullets
+  - Player
+  - Glow Effect Layer
   - 
   - 
   - 

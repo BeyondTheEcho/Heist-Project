@@ -7,12 +7,21 @@ using UnityEngine.UI;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float m_Damage = 5f;
-    [SerializeField] private float m_Speed = 5f;
+    [SerializeField] private float m_Speed = 10f;
     [SerializeField] private float m_BulletLifetime = 15f;
 
-    private Vector3? m_TargetPos = null;
-
+    private Rigidbody m_Rigidbody;
     private float m_TimeSinceSpawned = 0f;
+
+    private void Awake()
+    {
+        m_Rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        m_Rigidbody.velocity = transform.forward * m_Speed;
+    }
 
     private void Update()
     {
@@ -22,26 +31,11 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        if (m_TargetPos != null)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, m_TargetPos.Value, m_Speed * Time.deltaTime);
-        }
-    }
-
-    public void SetTarget(Transform player)
-    {
-        transform.LookAt(player);
-        
-        m_TargetPos = player.position;
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.CompareTag("Player"))
-        {
-            collider.GetComponent<Health>().TakeDamage(m_Damage);
-            Destroy(gameObject);
-        }
+        Debug.Log($"{collider.gameObject.name}");
+        Destroy(gameObject);
     }
 }
